@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <!-- Linking to the same external stylesheet ensures a consistent look and feel. -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container result-container">
+        <h1>Prediction Result</h1>
+        
+        <!-- This is a conditional block. It checks if a 'prediction' was successfully passed from the app. -->
+        {% if prediction %}
+            <div class="prediction-box">
+                <div class="prediction-value">{{ prediction }}%</div>
+                <div class="prediction-label">Predicted Recycling Rate</div>
+            </div>
+        <!-- If an 'error' was passed instead, it displays the error message. -->
+        {% elif error %}
+            <div class="error-box">
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+        
+        <a href="/" class="back-link">Make Another Prediction</a>
+    </div>
+</body>
+</html>
+
+
+

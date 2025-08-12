@@ -1,0 +1,175 @@
+/* static/style.css */
+
+/* --- Global Styles & Variables --- */
+/* Using CSS variables makes it easy to maintain a consistent color scheme. */
+:root {
+    --primary-color: #3498db;
+    --primary-hover: #2980b9;
+    --dark-text: #2c3e50;
+    --light-text: #ffffff;
+    --border-color: #bdc3c7;
+    --background-color: #f4f7f6;
+    --card-background: #ffffff;
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--dark-text);
+}
+
+/* --- Main Container --- */
+.container {
+    background: var(--card-background);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    max-width: 650px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: var(--dark-text);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+/* --- Form Layout & Styling --- */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    color: var(--dark-text);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+input,
+select {
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.submit-btn {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* --- Result Page Styling --- */
+.result-container {
+    text-align: center;
+}
+
+.prediction-box {
+    background: linear-gradient(135deg, var(--primary-color), var(--success-color));
+    color: var(--light-text);
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    display: inline-block;
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.3);
+}
+
+.prediction-value {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.prediction-label {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.error-box {
+    color: var(--error-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: rgba(231, 76, 60, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--error-color);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    background-color: var(--dark-text);
+    color: var(--light-text);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-link:hover {
+    background-color: #34495e;
+    transform: translateY(-2px);
+}
+
+
+/* --- Responsive Design --- */
+/* This media query ensures the form looks good on smaller screens (like mobile phones). */
+@media (max-width: 700px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .container {
+        padding: 2rem;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+}
