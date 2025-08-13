@@ -1,5 +1,7 @@
 # Mini-Hackathon: Waste Management & Recycling Prediction
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Click%20Here-brightgreen?style=for-the-badge)](https://waste-recycling-predictor-app-tzq7.onrender.com/)
+
 This project is a submission for the **PWSkills "Waste Management and Recycling in Indian Cities" mini-hackathon**.  
 The goal is to **predict the recycling rate (%)** based on various city-specific attributes using machine learning.
 
